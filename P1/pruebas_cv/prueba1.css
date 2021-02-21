@@ -1,4 +1,4 @@
-.image-fondo {
+* {
     background-image: url("villa.jpg");
     background-size: cover;
 }
