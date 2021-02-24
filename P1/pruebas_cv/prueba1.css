@@ -9,7 +9,7 @@ body {
     position: fixed;
     top: 0px;
     right:10px;
-  }
+}
 .wrapper {
     background: url("villa.jpg");
     background-repeat: repeat-y;
@@ -23,32 +23,57 @@ body {
     perspective: 1000px;
     perspective-origin: 50% 50%;
     animation: animation 100s linear infinite;
-  }
+}
 aside{
-    width: 30%;
+    width: 250px;
     border: #e77307  5px dotted;
     margin: 0px;
     padding:10px;
     text-align: justify;
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    bottom: 200px;
+    bottom: 150px;
     left:5px;
-    }
+}
 .titles {
     text-align: center;
     color: black;
     background-color: chocolate;
-    }
+}
 .contacts{
     font-family: cursive;
     font-size: medium;
     text-align: center;
     color: black;
     background-color: chocolate;
-    }
+}
       
 @keyframes animation {
     100%{
     background-position:0px -3000px;
     }
 }
+@font-face {
+    font-family: MyfirstFont;
+    src: url(njnaruto.ttf);
+}
+h1 {
+    font-family: MyfirstFont;
+    color: rgb(243, 123, 11);
+    -webkit-text-stroke: 1px rgb(0, 60, 241);
+    font-size: 70px;
+    position: fixed;
+}
+table {
+    width: 70%;
+    border: 1px solid rgb(241, 97, 1);
+    margin-left: 300px;
+    margin-bottom: 120px;
+ }
+th, td {
+    width: 25%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid rgb(30, 5, 255);
+ }
