@@ -16,7 +16,7 @@ body {
     background-size: cover;
     color: rgb(212, 90, 8);
     width: 100%;
-    height: 100vh;
+    height: 1600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,15 +25,15 @@ body {
     animation: animation 100s linear infinite;
 }
 aside{
-    width: 250px;
-    border: #e77307  5px dotted;
+    width: 300px;
+    border: #0026ff  5px dotted;
     margin: 0px;
     padding:10px;
     text-align: justify;
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 150px;
+    top:270px;
     left:5px;
 }
 .titles {
@@ -65,15 +65,35 @@ h1 {
     font-size: 70px;
     position: fixed;
 }
-table {
-    width: 70%;
+.cuerpo {
+    width: 65%;
     border: 1px solid rgb(241, 97, 1);
-    margin-left: 300px;
-    margin-bottom: 120px;
+    margin-top: 430px;
+    margin-left: 450px;
+    margin-bottom: 50px;
  }
-th, td {
-    width: 25%;
+.academic {
+    width: 95%;
+    border: 1px solid rgb(241, 97, 1);
+    margin-left: 10px;
+    margin-bottom: 500px;
+ }
+.title_table {
+    width: 50%;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     vertical-align: top;
     border: 1px solid rgb(30, 5, 255);
+    background-color:royalblue;
+
+ }
+.infor_td {
+    width: 50%;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid rgb(30, 5, 255);
+    background-color:chocolate;
  }
