@@ -16,7 +16,7 @@ body {
     background-size: cover;
     color: rgb(212, 90, 8);
     width: 100%;
-    height: 1600px;
+    height: 1400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,17 +66,19 @@ h1 {
     position: fixed;
 }
 .cuerpo {
-    width: 65%;
+    width: 800px;
     border: 1px solid rgb(241, 97, 1);
-    margin-top: 430px;
-    margin-left: 450px;
-    margin-bottom: 50px;
+    top:270px;
+    margin-left:400px;
+
  }
 .academic {
-    width: 95%;
+    width: 1200px;
     border: 1px solid rgb(241, 97, 1);
-    margin-left: 10px;
+    margin-left: 90px;
     margin-bottom: 500px;
+    margin-top: 0px;
+
  }
 .title_table {
     width: 50%;
@@ -97,3 +99,43 @@ h1 {
     border: 1px solid rgb(30, 5, 255);
     background-color:chocolate;
  }
+.idiomas{
+    width: 440px;
+    border: #0026ff  5px dotted;
+    margin: 10px;
+    padding:10px;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top:900px;
+    left:5px;
+
+}
+.imagenes{
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    
+}
+.español{
+    color: black;
+    position: absolute;
+    top: 60%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+}
+.ingles{
+    color: black;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.japones{
+    color: black;
+    position: absolute;
+    top: 60%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
