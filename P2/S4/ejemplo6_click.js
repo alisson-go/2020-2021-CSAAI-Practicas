@@ -14,3 +14,16 @@ const test = document.getElementById('test')
 //-- pulsación de botón: que se ejecute la
 //-- funcion manejador_parrafo()
 test.onclick = manejador_parrafo;
+
+//-----FORMA MÁS COMPACTA PARA HACER LO MISMO------------
+
+//console.log("Ejecutando js...")
+
+//-- Leer el párrafo identificado como test
+//const test = document.getElementById('test')
+
+//-- Configurar el manejador para el evento de
+//-- pulsación de botón
+//test.onclick = function () {
+  //console.log("Click sobre el párrafo...")
+//}
