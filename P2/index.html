@@ -9,33 +9,34 @@
     <title>Calculadora</title>
 </head>
 <body>
-    <table class="calculadora">
+    <table cellpadding="0" cellspacing="0" class="calculadora">
         <tr>
             <td colspan="4"><span id="caja"></span></td>
         </tr>
         <tr>
-            <td><button id="digito" value="0">0</button></td>
-            <td><button id="digito" value="00">00</button></td>
-            <td><button id="clear" >AC</button></td>
+            <td><button id="digito" value="raiz">&radic;</button></td>
+            <td><button type="button" value="7" class="digito">7</button></td>
+            <td><button type="button" value="8" class="digito">8</button></td>
+            <td><button type="button" value="9" class="digito">9</button></td>
+            <td><button id="digito" value="division">&#247;</button></td>
+            <td><button id="digito" value="0">&#37;</button></td>
+ 
+    
+        </tr>
+        <tr>
+            <td><button type="button" value="4" class="digito">4</button></td>
+            <td><button type="button" value="5" class="digito">5</button></td>
+            <td><button type="button" value="6" class="digito">6</button></td>
+            <td><button id="digito" value="mult">&times;</button></td>
             <td rowspan="4"><button id="suma" value="+">+</button></td>
+            <td><button id="clear" >AC</button></td>
         </tr>
         <tr>
-            <td><button type="button" value="1" class="digito">1</button></td>
+            <td><button type="button" value="3" class="digito">3</button></td>
             <td><button type="button" value="2" class="digito">2</button></td>
-            <td><button id="digito" value="3">3</button></td>
+            <td><button type="button" value="1" class="digito">1</button></td>
         </tr>
         <tr>
-            <td><button id="cuatro">4</button></td>
-            <td><button id="cinco">5</button></td>
-            <td><button id="seis">6</button></td>
-        </tr>
-        <tr>
-            <td><button id="cuatro">7</button></td>
-            <td><button id="cinco">8</button></td>
-            <td><button id="seis">9</button></td>
-        </tr>
-        <tr>
-            <td><button id="suma">+</button></td>
             <td><button id="igual">=</button></td>
         </tr>
     </table>

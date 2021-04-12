@@ -2,7 +2,8 @@ console.log("Ejecutando JS...");
 
 display = document.getElementById("caja")
 suma = document.getElementById("suma")
-//igual = document.getElementById("igual")
+igual = document.getElementById("igual")
+mult = document.getElementById("mult")
 //clear = document.getElementById("clear")
 
 //-- Estados de la calculadora
@@ -77,6 +78,7 @@ suma.onclick = (ev) => {
     //-- a OPERATION (según el diagrama de estados)
   
 }
+mult.onclick 
 
 //-- Evaluar la expresion
 igual.onclick = () => {

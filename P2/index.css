@@ -4,9 +4,9 @@ body {
 .fondo{
     position:absolute;
     height:600px;
-    width:600px;
-    top: 200px;
-    left : 40px;
+    width:700px;
+    top: 100px;
+    left : 270px;
     z-index: -1;
 }
 #caja{
@@ -19,20 +19,18 @@ body {
     height: 90px;
     line-height: 100px;
     background-color: black;
-    border-radius: 20px;
+
     overflow-y: scroll;
 }
 .calculadora{
     display: block;
     position: absolute;
-    margin: 0 auto;
     padding: 20px;
     background-color: orange;
     width: 340px;
     height: 400px;
-    border-radius: 10px;
-    margin-top: 200px;
-    margin-left: 250px;
+    margin-top: 180px;
+    margin-left: 480px;
     z-index: 1;
 }
 .calculadora td button{
@@ -40,6 +38,8 @@ body {
     width: 35px;
     height: 30px;
     font-size:20px;
+    padding: 0px;
+    
 }
 #suma{
     display: block;
@@ -47,4 +47,7 @@ body {
     font-size: 40px;
     width: 35px;
     height: 100px;
+
 }
+
+
