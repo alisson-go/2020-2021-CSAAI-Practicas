@@ -1,0 +1,14 @@
+/* Estilo del canvas
+  Lo bordeamos con una línea negra y le damos fondo
+  azul para distinguirlo
+*/
+*{
+    background-color: tomato;
+}
+canvas {
+    background-color: black;
+    border-style: solid;
+    border-width: 10px;
+    border-color:white;
+    border-radius: 5px;
+  }
