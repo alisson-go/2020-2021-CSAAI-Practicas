@@ -11,7 +11,7 @@ let x_ball=0;
 let y_ball=570;
 
 let velx=3;
-let velballx= 3;
+let vely= 3;
 //coordenadas para la raqueta
 let x_racket= (canvas.width)/2;
 let y_racket=canvas.height-10;
@@ -62,6 +62,7 @@ function ball(){
   ctx.fill()
 
   ctx.closePath()
+
 }
 function racket(){
   ctx.beginPath();
@@ -99,7 +100,12 @@ function update()
   if (x_ball < 0 || x_ball >= (canvas.width - 20) ) {
     velx = -velx;
   }
-  x = x_ball + velx;
+  if (y_ball <= 0 || y_ball > 80) {
+    vely = -vely;
+  }
+
+  x_ball = x_ball + velx;
+  y_ball = y_ball + vely;
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
