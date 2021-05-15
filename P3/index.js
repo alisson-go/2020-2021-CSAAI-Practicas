@@ -94,6 +94,16 @@ function draw_ladrillos(){
     }
   }
 }
+function colision_ladrillos(){
+  for (let i = 0; i < LADRILLO.F; i++) {
+    for (let j = 0; j < LADRILLO.C; j++) {
+      var lad = bricks[i][j];
+      if(x_ball > lad.x && x_ball<lad.x+LADRILLO.w && y_ball>lad.y && y_ball< lad.y + LADRILLO.h){
+        vely = -vely
+      }
+    }
+  }
+}
 function update()
 {
   console.log("test");
