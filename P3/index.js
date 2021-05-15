@@ -100,12 +100,12 @@ function update()
   if (x_ball < 0 || x_ball >= (canvas.width - 20) ) {
     velx = -velx;
   }
-  if (y_ball <= 0 || y_ball > 80) {
+  if (y_ball <= 100 || y_ball > canvas.height) {
     vely = -vely;
   }
 
   x_ball = x_ball + velx;
-  y_ball = y_ball + vely;
+  y_ball = y_ball - vely;
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -120,7 +120,17 @@ function update()
 
 //-- Cada objeto a dibujar lo delimitaremos 
 //-- por los métodos beginPath() y closePath()
- 
+document.body.onkeydown= function(event){
+  switch(event.keyCode){
+      case 37: // Izquierda
+          x_racket=x_racket - 10;       
+          break;
+      case 39: // Derecha
+          x_racket=x_racket + 10;       
+          break;
+
+  }
+}
 }
 update()
 window.addEventListener("load",function(){
