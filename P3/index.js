@@ -117,3 +117,22 @@ function update()
  
 }
 update()
+window.addEventListener("load",function(){
+  document.getElementById("play").addEventListener("click",playmusic);
+  document.getElementById("mute").addEventListener("click",mutemusic);
+});
+function playmusic(){
+	var sonido = document.createElement("iframe");
+	sonido.setAttribute("src","naruto.mp3");
+	document.body.appendChild(sonido);
+	document.getElementById("play").removeEventListener("click",playmusic);
+}
+
+function mutemusic(){
+	var iframe = document.getElementsByTagName("iframe");
+
+	if (iframe.length > 0){
+		iframe[0].parentNode.removeChild(iframe[0]);
+		document.getElementById("play").addEventListener("click",playmusic);
+	}
+}
