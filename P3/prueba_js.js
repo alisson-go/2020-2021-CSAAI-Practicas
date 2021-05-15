@@ -9,6 +9,7 @@ canvas.height = 100;
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
+function campo
 //-- Coordenadas del objeto
 let x = 0;
 let y = 10;
