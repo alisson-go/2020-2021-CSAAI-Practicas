@@ -100,7 +100,7 @@ function update()
   if (x_ball < 0 || x_ball >= (canvas.width - 20) ) {
     velx = -velx;
   }
-  if (y_ball <= 100 || y_ball > canvas.height) {
+  if (y_ball <= 100 || (y_ball > canvas.height && x_ball>=x_racket)) {
     vely = -vely;
   }
 
@@ -123,11 +123,16 @@ function update()
 document.body.onkeydown= function(event){
   switch(event.keyCode){
       case 37: // Izquierda
-          x_racket=x_racket - 10;       
-          break;
+        if(x_racket > 0){
+          x_racket=x_racket - 10; 
+        }
+              
+        break;
       case 39: // Derecha
-          x_racket=x_racket + 10;       
-          break;
+        if(x_racket<=canvas.width-50){
+          x_racket=x_racket + 10;  
+        }     
+        break;
 
   }
 }
