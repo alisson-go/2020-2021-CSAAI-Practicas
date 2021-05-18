@@ -19,6 +19,7 @@ let y_racket=canvas.height-10;
 let x_ladrillos = 20;
 let y_ladrillos = 20;
 
+var score=0;
 const LADRILLO = {
     F: 4,  // Filas
     C: 20,  // Columnas
@@ -97,12 +98,25 @@ function draw_ladrillos(){
 function colision_ladrillos(){
   for (let i = 0; i < LADRILLO.F; i++) {
     for (let j = 0; j < LADRILLO.C; j++) {
-      var lad = bricks[i][j];
-      if(x_ball > lad.x && x_ball<lad.x+LADRILLO.w && y_ball>lad.y && y_ball< lad.y + LADRILLO.h){
-        vely = -vely
+      var lad = ladrillos[i][j];
+      if(lad.status==1){
+        if(x_ball > lad.x && x_ball<lad.x+LADRILLO.w && y_ball>lad.y && y_ball< lad.y + LADRILLO.h){
+          vely = -vely;
+          lad.status = 0;
+          score++;
+          if(score == LADRILLO.F*LADRILLO.C){
+            alert("HAS GANADO!")
+            document.location.reload();
+          }
+        }
       }
     }
   }
+}
+function dibujar_score(){
+  ctx.font = "16px arial";
+  ctx.fillStyle = "white";
+  ctx.fillText("Score: "+score,8,20)
 }
 function update()
 {
@@ -121,9 +135,16 @@ function update()
 
   //-- 3) Dibujar los elementos visibles
   //-- Dibujar ladrillos
+ 
   draw_ladrillos();
+  
   racket();
   ball();
+  dibujar_score();
+  colision_ladrillos();
+ // colision_ladrillos();
+  
+
   //-- 4) Volver a ejecutar update cuando toque
 
   requestAnimationFrame(update);
