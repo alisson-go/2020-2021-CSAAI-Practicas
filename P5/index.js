@@ -60,6 +60,7 @@ btn_src_on.onclick = () => {
 
   //-- En la emisión en directo ponemos la imagen de prueba
   directo.poster = TEST_IMAGE_URL;
+  normal();
 };
 //-- Boton de FUENTES-ON
 btn_src_off.onclick = () => {
@@ -93,28 +94,32 @@ btn_test.onclick = () => {
 };
 
 //-- Botón de Selección de la cámara 1
-btn_video1.onclick = () => {
+function normal (){
+    btn_video1.onclick = () => {
     directo.src = video1.src;
     directo.currentTime = video1.currentTime;
     directo.play();
     directo.poster=null;
     selector=1;
 
-};
-btn_video2.onclick = () => {
+    };
+    btn_video2.onclick = () => {
     directo.src = video2.src;
     directo.currentTime = video2.currentTime;
     directo.play();
     directo.poster=null;
     selector = 2;
-};
-btn_video3.onclick = () => {
+    };
+    btn_video3.onclick = () => {
     directo.src = video3.src;
     directo.currentTime = video3.currentTime;
     directo.play();
     directo.poster=null;
     selector=3;
-};
+    };
+}
+
+
 function automatico() {
     if(cont == 0){
         directo.src = video1.src;
@@ -171,11 +176,16 @@ function loop() {
     }
 
 }
+btn_manual.onclick= () =>{
+    automatico = false;
+    normal();
+}
 
 btn_auto.onclick= () =>{
     setInterval('automatico()',3000)
 }
 btn_loop.onclick = ()=>{
-    setInterval('loop()',2000)
+
+    setTimeout('loop()',2000)
 
 }
