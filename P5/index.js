@@ -11,6 +11,7 @@ const btn_src_on = document.getElementById("btn_src_on");
 const btn_src_off = document.getElementById("btn_src_off");
 const btn_auto = document.getElementById("btn_auto");
 const btn_manual = document.getElementById("btn_manual");
+var cont=0;
 
 
 
@@ -109,9 +110,39 @@ btn_video3.onclick = () => {
     directo.play();
     directo.poster=null;
 }
+function automatico() {
+    if(cont == 0){
+        directo.src = video1.src;
+        directo.currentTime = video1.currentTime;
+        directo.play();
+        directo.poster=null;
+        cont = cont+1;
+    }
+    else if(cont == 1){
+        directo.src = video2.src;
+        directo.currentTime = video2.currentTime;
+        directo.play();
+        directo.poster=null;
+        cont=cont+1;
+    }
+    else if (cont== 2){
+        directo.src = video3.src;
+        directo.currentTime = video3.currentTime;
+        directo.play();
+        directo.poster=null;
+        cont=cont+1;
+    
+    }
+    else if(cont == 3){
+        video1.pause();
+        video2.pause();
+        video3.pause();
+        directo.src = null;
+        directo.poster=TEST_IMAGE_URL;
+    }
+
+}
+
 btn_auto.onclick= () =>{
-    directo.src = video1.src;
-    directo.currentTime = video1.currentTime;
-    //directo.play();
-    setTimeout(directo.play(),3000)
+    setInterval('automatico()',3000)
 }
