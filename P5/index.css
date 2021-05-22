@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(158, 185, 243);
+  }
+.titulo{
+    text-align: center;
+}
+.videos{
+    text-align: center;
+
+}
+.camara1{
+    text-align: center;
+
+}
+.botones{
+    width: 120px;
+    height: 40px;
+}
