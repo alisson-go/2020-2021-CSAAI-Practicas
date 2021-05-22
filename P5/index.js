@@ -11,7 +11,9 @@ const btn_src_on = document.getElementById("btn_src_on");
 const btn_src_off = document.getElementById("btn_src_off");
 const btn_auto = document.getElementById("btn_auto");
 const btn_manual = document.getElementById("btn_manual");
+const btn_loop = document.getElementById("btn_loop");
 var cont=0;
+var selector=0;
 
 
 
@@ -96,6 +98,7 @@ btn_video1.onclick = () => {
     directo.currentTime = video1.currentTime;
     directo.play();
     directo.poster=null;
+    selector=1;
 
 };
 btn_video2.onclick = () => {
@@ -103,13 +106,15 @@ btn_video2.onclick = () => {
     directo.currentTime = video2.currentTime;
     directo.play();
     directo.poster=null;
-}
+    selector = 2;
+};
 btn_video3.onclick = () => {
     directo.src = video3.src;
     directo.currentTime = video3.currentTime;
     directo.play();
     directo.poster=null;
-}
+    selector=3;
+};
 function automatico() {
     if(cont == 0){
         directo.src = video1.src;
@@ -142,7 +147,35 @@ function automatico() {
     }
 
 }
+function loop() {
+    if(selector == 1){
+        directo.src = video1.src;
+        directo.currentTime = video1.currentTime;
+        directo.play();
+        directo.poster=null;
+        
+    }
+    else if(selector == 2){
+        directo.src = video2.src;
+        directo.currentTime = video2.currentTime;
+        directo.play();
+        directo.poster=null;
+        
+    }
+    else if(selector == 3){
+        directo.src = video3.src;
+        directo.currentTime = video3.currentTime;
+        directo.play();
+        directo.poster=null;
+        
+    }
+
+}
 
 btn_auto.onclick= () =>{
     setInterval('automatico()',3000)
+}
+btn_loop.onclick = ()=>{
+    setInterval('loop()',2000)
+
 }
