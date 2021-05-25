@@ -6,42 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="all" href="index.css" />
     <script src="index.js" defer></script>
-    <title>Calculadora</title>
-</head>
-<body>
-    <div class="fn">
-        <h1>CALCULADORA DE NARUTO</h1>
-        <p id="resultado"></p>
-        <table >
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="prueba_calc.js" defer></script>
+        <link rel="stylesheet" href="prueba_calc.css">
+        <title>Calculadora 0.2</title>
+    </head>
+    <body>
+        
+        <table>
             <tr>
-                <td><button class="boton" onclick="clean()">C</button></td>
-                <td><button class="boton" onclick="parcial()">DEL</button></td>
-                <td><button class="boton" onclick="insert('/')">/</button></td>
-                <td><button class="boton" onclick="insert('*')">*</button></td>
+                <td colspan="4"><p class="display"id="display">0</p></td>
             </tr>
             <tr>
-                <td><button class="boton" onclick="insert('7')">7</button></td>
-                <td><button class="boton" onclick="insert('8')">8</button></td>
-                <td><button class="boton" onclick="insert('9')">9</button></td>
-                <td><button class="boton" onclick="insert('-')" >-</button></td>
+                <td><button class="digito" type="button" id="clear">AC</button></td>
+                <td><button class="digito" type="button" id="clear_all">C</button></td>
+                <td><button class="digito" type="button" id="boton" value="%">%</button></td>
+                <td><button class="digito" type="button" id="elevar" value="^">^</button></td>
             </tr>
             <tr>
-                <td><button class="boton" onclick="insert('4')">4</button></td>
-                <td><button class="boton" onclick="insert('5')">5</button></td>
-                <td><button class="boton" onclick="insert('6')">6</button></td>
-                <td><button class="boton" onclick="insert('+')">+</button></td>
+    
+                <td><button class="digito" type="button" id="boton" value="7">7</button></td>
+                <td><button class="digito" type="button" id="boton" value="8">8</button></td>
+                <td><button class="digito" type="button" id="boton" value="9">9</button></td>
+                <td><button class="digito"type="button" id="division" value="/">/</button></td>
             </tr>
+            <br>
+            <br>
             <tr>
-                <td><button class="boton" onclick="insert('1')">1</button></td>
-                <td><button class="boton" onclick="insert('2')">2</button></td>
-                <td><button class="boton" onclick="insert('3')">3</button></td>
-                <td rowspan="2"><button class="boton" style="height: 106px;" onclick="calcular()">=</button></td>
+                <td><button class="digito" type="button" id="boton" value="4">4</button></td>
+                <td><button class="digito" type="button" id="boton" value="5">5</button></td>
+                <td><button class="digito" type="button" id="boton" value="6">6</button></td>
+                <td><button class="digito"type="button" id="multiplicar" value="*">x</button></td>
             </tr>
+            <br>
+            <br>
             <tr>
-                <td colspan="2"><button class="boton" onclick="insert('0')" style="width: 106px;">0</button></td>
-                <td><button class="boton" onclick="insert('.')">.</button></td>
+                <td><button class="digito" type="button" id="boton" value="1">1</button></td>
+                <td><button class="digito" type="button" id="boton" value="2">2</button></td>
+                <td><button class="digito" type="button" id="boton" value="3">3</button></td>
+                <td><button class="digito"type="button" id="suma" value="+">+</button></td>
             </tr>
+            <br>
+            <br>
+            <tr>
+                <td><button class="digito" type="button" id="boton" value="0">0</button></td>
+                <td><button class="digito" type="button" id="boton" value="2">.</button></td>
+                <td><button class="digito" type="button" id="igual" >=</button></td>
+                <td><button class="digito"type="button" id="suma" value="+">-</button></td>
+            </tr>
+    
         </table>
-    </div>    
-</body>
-</html>
+    </body>
+    </html>

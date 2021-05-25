@@ -1,18 +1,4 @@
-
-*{
-    margin: 0;
-    padding:0;
-}
-.fn{
-    position:absolute;
-    background-color: orange;
-    top: 50px;
-    left: 50%;
-    transform: translate(-50%,50%);
-    border-radius: 15px;
-    padding: 15px;
-}
-.boton{
+.digito{
     background-color: rgb(92, 67, 67);
     height: 50px;
     width: 50px;
@@ -21,16 +7,12 @@
     border: none;
     color: blanchedalmond;
 }
-.boton:hover{
+.digito:hover{
     background-color: blueviolet;
 }
-#resultado{
-    background-color: cornsilk;
-    width: 260px;
-    height: 30px;
-    margin: 5px;
-    font: size 25px; 
-    color: black;
-    text-align: right;
-    padding: 5px;
+.display{
+    background-color: rgb(12, 11, 11);
+    width: 230px;
+    height: 40px;
+    color: aliceblue;
 }
