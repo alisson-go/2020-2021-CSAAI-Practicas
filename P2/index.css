@@ -3,7 +3,7 @@
     height: 50px;
     width: 50px;
     cursor: pointer;
-    margin: 3px;
+    margin: 4px;
     border: none;
     color: blanchedalmond;
 }
@@ -15,4 +15,5 @@
     width: 230px;
     height: 40px;
     color: aliceblue;
+    font-size: larger;
 }

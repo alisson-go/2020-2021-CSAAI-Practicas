@@ -3,7 +3,15 @@ console.log("Ejecutando JS...");
 display = document.getElementById("display")
 suma = document.getElementById("suma")
 igual = document.getElementById("igual")
+multiplicar= document.getElementById("multiplicar")
+raiz=document.getElementById("raiz")
+porcentaje = document.getElementById("porcentaje")
 clear = document.getElementById("clear")
+tecla_DEL = document.getElementById("borrar_ultimo")
+coma = document.getElementById("coma")
+
+digitos = document.getElementsByClassName("digito")
+//operandos = document.getElementsByClassName("operandos")
 
 //-- Estados de la calculadora
 const ESTADO = {
@@ -20,12 +28,7 @@ const ESTADO = {
 //-- Función de retrollamada de los digitos
 function digito(ev)
 {
-    //-- Se ha recibido un dígito
-    //-- Según en qué estado se encuentre la calculadora
-    //-- se hará una cosa u otra
 
-    //-- Si es el primer dígito, no lo añadimos,
-    //-- sino que lo mostramos directamente en el display
     if (estado == ESTADO.INIT) {
 
         display.innerHTML = ev.target.value;
@@ -42,47 +45,49 @@ function digito(ev)
     
 }
 
-
-//-- Obtener una colección con todos los elementos
-//-- de la clase digito
-digitos = document.getElementsByClassName("digito")
-
-//-- Establecer la misma función de retrollamada
-//-- para todos los botones de tipo dígito
 for (let boton of digitos) {
 
-    //-- Se ejecuta cuando se pulsa un boton
-    //-- que es un dígito. Para que el código sea 
-    //-- mas legible la función de retrollamada se
-    //-- escribe como una función normal (digito)
     boton.onclick = digito;
 }
 
-//-------- Resto de funciones de retrollamada
 
 //-- Operación de sumar
 suma.onclick = (ev) => {
-
     //-- Insertar simbolo de sumar
     display.innerHTML += ev.target.value;
+    
   
 }
+porcentaje.onclick=()=>{
+    var op1 =ESTADO.OP1;
+    var operador = ESTADO.OPERATION;
+    var op2 = ESTADO.OP2;
 
+    if(operador =="%"){
+        display.innerHTML = (op1*op2)/100;
+    }
+}
 //-- Evaluar la expresion
 igual.onclick = () => {
   
     //-- Calcular la expresión y añadirla al display
     display.innerHTML = eval(display.innerHTML);
 
-    //-- ¡Ojo! Aquí se hace siempre!
-    //-- Sólo se debe permitar que eso se haga
-    //-- si se está en el estado final (OP2)
-  
 }
 
-//-- Poner a cero la expresion
-//-- Y volver al estado inicial
+
 clear.onclick = () => {
   display.innerHTML = "0";
   estado = ESTADO.INIT;
+}
+tecla_DEL.onclick =()=>{
+    if (display.innerHTML=="0"){
+        display.innerHTML = "0";
+    }else{
+        display.innerHTML=display.innerHTML.substring(0,display.innerHTML.length -1)
+        if (display.innerHTML.length<1){
+            display.innerHTML = "0";
+            estado = ESTADO.INIT;
+        }
+    }
 }
