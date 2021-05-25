@@ -1,5 +1,6 @@
 function insert(num)
 {
+
     var digito = document.getElementById('resultado').innerHTML
     document.getElementById('resultado').innerHTML = digito + num;
 
@@ -9,16 +10,19 @@ function clean(){
 }
 function calcular(){
     var resultado = document.getElementById('resultado').innerHTML;
-    if (resultado)
-    {
+    var found = resultado.find(suma => suma.nombre==="++");
+    if(found == "++"){
+        console.log("holaaaa");
+    }else{
         document.getElementById('resultado').innerHTML=eval(resultado)
     }
+
 }
 function parcial(num){
     var digito = document.getElementById('resultado').innerHTML
     pos=digito.length;
     digito=digito.substr(0,pos-1);
-    if(digito==""){
+    if(digito==" "){
         digito="0";
     } 
     document.getElementById('resultado').innerHTML=digito;
