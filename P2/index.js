@@ -4,6 +4,7 @@ display = document.getElementById("display")
 suma = document.getElementById("suma")
 igual = document.getElementById("igual")
 multiplicar= document.getElementById("multiplicar")
+elevar= document.getElementById("elevar")
 raiz=document.getElementById("raiz")
 porcentaje = document.getElementById("porcentaje")
 clear = document.getElementById("clear")
@@ -20,8 +21,8 @@ const ESTADO = {
     OPERATION: 2,
     OP2: 3
 }
-var operaciones=[];
-var operaciones=new Array();
+//var operaciones=0;
+
  //-- Variable de estado de la calculadora
  //-- Al comenzar estamos en el estado incial
  let estado = ESTADO.INIT;   
@@ -36,11 +37,13 @@ function digito(ev)
 
         //-- Pasar al siguiente estado
         estado = ESTADO.OP1;
+        
 
     } else {
        
         //--En cualquier otro estado lo añadimos
         display.innerHTML += ev.target.value;
+
 
     } 
     
@@ -50,27 +53,61 @@ for (let boton of digitos) {
 
     boton.onclick = digito;
 }
-
+var operaciones =0;
+function calc_elevar(){
+    if (ESTADO==1||ESTADO==3){
+        signo=eval(display.innerHTML.replace('^','**'))
+    }
+}
 
 //-- Operación de sumar
-suma.onclick = (ev) => {
+multiplicar.onclick = (ev) => {
     //-- Insertar simbolo de sumar
+    
     display.innerHTML += ev.target.value;
     estado= ESTADO.OPERATION;
     operaciones = operaciones + 1;
     if (operaciones>1){
         display.innerHTML = "ERROR DE SINTAXIS";
-        operaciones = 0
-    }
+        operaciones = 0;
+        console.log(operaciones);
+    }   
+  
+}
+suma.onclick = (ev) => {
+    //-- Insertar simbolo de sumar
     
-    
+    display.innerHTML += ev.target.value;
+    estado= ESTADO.OPERATION;
+    operaciones = operaciones + 1;
+    if (operaciones>1){
+        display.innerHTML = "ERROR DE SINTAXIS";
+        operaciones = 0;
+        console.log(operaciones);
+    }   
   
 }
 porcentaje.onclick=()=>{
 
-    if(operador =="%"){
-        display.innerHTML = (display.innerHTML)/100;
-    }
+    display.innerHTML = (display.innerHTML/100);
+    operaciones = operaciones + 1;
+    if (operaciones>1){
+        display.innerHTML = "ERROR DE SINTAXIS";
+        operaciones = 0;
+        console.log(operaciones);
+    }  
+    
+}
+raiz.onclick=()=>{
+   
+
+    display.innerHTML = Math.sqrt(display.innerHTML);
+    operaciones = operaciones + 1;
+    if (operaciones>1){
+        display.innerHTML = "ERROR DE SINTAXIS";
+        operaciones = 0;
+        console.log(operaciones);
+    }  
     
 }
 //-- Evaluar la expresion
@@ -78,6 +115,7 @@ igual.onclick = () => {
   
     //-- Calcular la expresión y añadirla al display
     display.innerHTML = eval(display.innerHTML);
+    operaciones = 0
 
 }
 
