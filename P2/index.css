@@ -17,3 +17,8 @@
     color: aliceblue;
     font-size: larger;
 }
+.calc{
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+}

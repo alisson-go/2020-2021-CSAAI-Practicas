@@ -123,6 +123,7 @@ igual.onclick = () => {
 clear.onclick = () => {
   display.innerHTML = "0";
   estado = ESTADO.INIT;
+  operaciones=0;
 }
 tecla_DEL.onclick =()=>{
     if (display.innerHTML=="0"){
