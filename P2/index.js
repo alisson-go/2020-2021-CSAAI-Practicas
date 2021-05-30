@@ -20,7 +20,8 @@ const ESTADO = {
     OPERATION: 2,
     OP2: 3
 }
- 
+var operaciones=[];
+var operaciones=new Array();
  //-- Variable de estado de la calculadora
  //-- Al comenzar estamos en el estado incial
  let estado = ESTADO.INIT;   
@@ -55,17 +56,22 @@ for (let boton of digitos) {
 suma.onclick = (ev) => {
     //-- Insertar simbolo de sumar
     display.innerHTML += ev.target.value;
+    estado= ESTADO.OPERATION;
+    operaciones = operaciones + 1;
+    if (operaciones>1){
+        display.innerHTML = "ERROR DE SINTAXIS";
+        operaciones = 0
+    }
+    
     
   
 }
 porcentaje.onclick=()=>{
-    var op1 =ESTADO.OP1;
-    var operador = ESTADO.OPERATION;
-    var op2 = ESTADO.OP2;
 
     if(operador =="%"){
-        display.innerHTML = (op1*op2)/100;
+        display.innerHTML = (display.innerHTML)/100;
     }
+    
 }
 //-- Evaluar la expresion
 igual.onclick = () => {
