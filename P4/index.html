@@ -9,6 +9,7 @@
     <title>Ejemplo 1</title>
 </head>
 <body>
+    <h1>EFECTOS DIGIMON</h1>
     <div>
         <table>
             <tr>
@@ -39,6 +40,16 @@
         <p>Establece el umbral de azul:</p>
         <input type="range" id="deslizador3" min="0" max="255" value="255"/>
         <p id="range_value3">00</p>
+    </div>
+    <div>
+        <form name="selec_imagenes">
+            <select name="lista" size="1">
+            <option value="digimon2.jpg">Imagen2</option>
+            <option value="digimon3.jpg">Imagen3</option>
+        </select>
+       <input type="button" value="Elegir" onclick="selec_imagenes()">
+            
+        </form>
     </div>
 </body>
 </html>

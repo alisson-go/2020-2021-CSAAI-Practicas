@@ -2,7 +2,7 @@ console.log("Ejecutando JS....")
 
 //-- Obtener elementos del DOM
 const canvas = document.getElementById('canvas');
-const img = document.getElementById('imagesrc')
+//const img = document.getElementById('imagesrc')
 const ctx = canvas.getContext('2d');
 //colores
 const deslizador1 = document.getElementById('deslizador1');
@@ -17,6 +17,10 @@ const grises = document.getElementById('grises');
 //-- La imagen no se carga instantaneamente, sino que
 //-- lleva un tiempo. Sólo podemos acceder a ella una vez
 //-- que esté totalmente cargada
+var img;
+function selec_imagenes(){
+  img=document.selec_imagenes.lista(document.selec_imagenes).value;
+}
 img.onload = function () {
 
   console.log("Imagen cargada");
