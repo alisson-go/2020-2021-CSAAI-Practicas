@@ -18,7 +18,7 @@
             </tr>
             <tr>
                 <td>
-                    <img src="digimon.jpg" id="imagesrc">
+                    <img src="digimon.jpg" id="imagen1">
                 </td>
                 <td>
                     <canvas id="canvas"></canvas>
@@ -26,9 +26,18 @@
             </tr>
         </table>
     </div>
+    <div >
+        <select class="change_imagenes" id="lista" size="1" style="width: 100px;">
+            <option value="imagen0">Imagen inicial</option>
+            <option value="imagen2">Imagen 2</option>
+            <option value="imagen3">Imagen 3</option>
+        </select>   
+
+
+    </div>
     <div>
         <input type="button" value="GRISES" id="grises">
-        <input type="button" value="COLOREsS" id="button">
+        <input type="button" value="COLORES" id="button">
     </div>
     <div>
         <p>Establece el umbral de rojo:</p>
@@ -41,15 +50,6 @@
         <input type="range" id="deslizador3" min="0" max="255" value="255"/>
         <p id="range_value3">00</p>
     </div>
-    <div>
-        <form name="selec_imagenes">
-            <select name="lista" size="1">
-            <option value="digimon2.jpg">Imagen2</option>
-            <option value="digimon3.jpg">Imagen3</option>
-        </select>
-       <input type="button" value="Elegir" onclick="selec_imagenes()">
-            
-        </form>
-    </div>
+
 </body>
 </html>
