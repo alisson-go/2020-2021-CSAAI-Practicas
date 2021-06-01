@@ -6,6 +6,7 @@ var img = document.getElementById('imagen1');
 var opciones = document.getElementById('lista');
 const ctx = canvas.getContext('2d');
 //colores
+const colores = document.getElementById('button');
 const deslizador1 = document.getElementById('deslizador1');
 const deslizador2=document.getElementById('deslizador2');
 const deslizador3=document.getElementById('deslizador3');
@@ -14,6 +15,12 @@ const range_value2 = document.getElementById('range_value2');
 const range_value3 = document.getElementById('range_value3');
 //grises
 const grises = document.getElementById('grises');
+//especular
+const abajo = document.getElementById('abajo');
+const horizontal = document.getElementById('horizontal');
+//filtro inversion
+
+
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
 //-- lleva un tiempo. Sólo podemos acceder a ella una vez
@@ -61,15 +68,19 @@ function change_color(){
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
 }
-deslizador1.oninput=()=>{
-  change_color();
+colores.onclick=()=>{
+  img.onload();
+  deslizador1.oninput=()=>{
+    change_color();
+  }
+  deslizador2.oninput=()=>{
+    change_color();
+  }
+  deslizador3.oninput=()=>{
+    change_color();
+  }
 }
-deslizador2.oninput=()=>{
-  change_color();
-}
-deslizador3.oninput=()=>{
-  change_color();
-}
+
 opciones.onchange =()=>{
     var eleccion = opciones.value;
     if(eleccion == "imagen2"){
@@ -89,6 +100,7 @@ opciones.onchange =()=>{
 
 grises.onclick = () => {
   console.log("grises");
+  img.onload();
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
   ctx.drawImage(img, 0,0);
@@ -112,5 +124,46 @@ grises.onclick = () => {
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
 }
+abajo.onclick=()=>{
+  console.log("espejoo");
+  img.onload();
+  ctx.translate(0,canvas.height);
+  ctx.scale(1,-1);
+  ctx.drawImage(img, 0,0);
+}
+horizontal.onclick=()=>{
+  console.log("horzontal");
+  img.onload();
+  ctx.translate(canvas.width,0);
+  ctx.scale(-1,1);
+  ctx.drawImage(img, 0,0);
+}
+invertir.onclick = () => {
+  console.log("invertir");
+  img.onload();
+  //-- Situar la imagen original en el canvas
+  //-- No se han hecho manipulaciones todavia
+  ctx.drawImage(img, 0,0);
 
+  //-- Obtener la imagen del canvas en pixeles
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+  //-- Obtener el array con todos los píxeles
+  let data = imgData.data;
+
+
+  //-- Filtrar la imagen según el nuevo umbral
+
+  for (let i = 0; i < data.length; i+=4) {
+    console.log("datas");
+    red = data[i];
+    green = data[i+1];
+    blue = data[i+2];
+    data[i]= 255-red;
+    data[i+1]=255-green;
+    data[i+2]=255-blue
+  }
+  //-- Poner la imagen modificada en el canvas
+  ctx.putImageData(imgData, 0, 0);
+}
 console.log("Fin...");
