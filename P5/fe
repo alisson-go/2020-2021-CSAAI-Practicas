@@ -92,13 +92,9 @@ btn_test.onclick = () => {
     directo.poster = TEST_IMAGE_URL;
     directo.src = null;
 };
-var control_auto = false;
+
+//-- Botón de Selección de la cámara 1
 function normal (){
-
-    control_auto = false;
-    window.clearTimeout(loop);
-    //-- Botón de Selección de la cámara 1
-
     btn_video1.onclick = () => {
     directo.src = video1.src;
     directo.currentTime = video1.currentTime;
@@ -125,48 +121,43 @@ function normal (){
 
 
 function automatico() {
-    
-    if (control_auto=true){
-        console.log("autooo");
-        if(cont == 0){
-            directo.src = video1.src;
-            directo.currentTime = video1.currentTime;
-            directo.play();
-            directo.poster=null;
-            cont = cont+1;
-            console.log("1");
-        }
-        else if(cont == 1){
-            directo.src = video2.src;
-            directo.currentTime = video2.currentTime;
-            directo.play();
-            directo.poster=null;
-            cont=cont+1;
-            console.log("2");
-        }
-        else if (cont== 2){
-            directo.src = video3.src;
-            directo.currentTime = video3.currentTime;
-            directo.play();
-            directo.poster=null;
-            cont=cont+1;
-            console.log("3");
-        }
-        else if(cont == 3){
-            directo.src = null;
-            directo.poster=TEST_IMAGE_URL;
-            control_auto=false;
-            cont = null;
-            console.log("4");
-        }
+    if(cont == 0){
+        directo.src = video1.src;
+        directo.currentTime = video1.currentTime;
+        directo.play();
+        directo.poster=null;
+        cont = cont+1;
     }
+    else if(cont == 1){
+        directo.src = video2.src;
+        directo.currentTime = video2.currentTime;
+        directo.play();
+        directo.poster=null;
+        cont=cont+1;
+    }
+    else if (cont== 2){
+        directo.src = video3.src;
+        directo.currentTime = video3.currentTime;
+        directo.play();
+        directo.poster=null;
+        cont=cont+1;
     
+    }
+    else if(cont == 3){
+        video1.pause();
+        video2.pause();
+        video3.pause();
+        directo.src = null;
+        directo.poster=TEST_IMAGE_URL;
+    }
+
 
 }
 function loop() {
     if(selector == 1){
         directo.src = video1.src;
         directo.currentTime = video1.currentTime;
+        
         directo.poster=null;
         
     }
@@ -192,25 +183,12 @@ btn_manual.onclick= () =>{
 }
 
 btn_auto.onclick= () =>{
-    console.log("automatico");
-    control_auto=true;
-    setInterval('automatico()',3000);
+    console.log("automatico")
+    setInterval('automatico()',3000)
 }
-var b_loop = false;
-const inicio = 0;
-const final= inicio + 2;
 btn_loop.onclick = ()=>{
     normal();
-    console.log("looop");
-    directo.currentTime = inicio;
-    b_loop = true;
-    //setTimeout('loop()',2000
+    console.log("looop")
+    setTimeout('loop()',2000)
 
 }
-setInterval(()=>{
-    if(b_loop){
-        if(directo.currentTime>final){
-            directo.currentTime=inicio;
-        }
-    }
-},2000);
